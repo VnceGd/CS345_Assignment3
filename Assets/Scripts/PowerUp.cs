@@ -13,7 +13,7 @@ public class PowerUp : MonoBehaviour
     // Frighten ghosts if eaten
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             gameManager.Frighten();
             Destroy(gameObject);

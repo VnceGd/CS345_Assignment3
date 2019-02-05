@@ -13,7 +13,7 @@ public class Pellet : MonoBehaviour
     // Increase score by 10 if eaten by player
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             gameManager.pelletCount--;
             gameManager.IncreaseScore(10);

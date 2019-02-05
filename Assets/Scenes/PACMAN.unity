@@ -4528,7 +4528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 265171444, guid: f62beafece1724bb4b503e46d85d4925, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 265171444, guid: f62beafece1724bb4b503e46d85d4925, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4541,10 +4541,6 @@ PrefabInstance:
     - target: {fileID: 265171444, guid: f62beafece1724bb4b503e46d85d4925, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 265171441, guid: f62beafece1724bb4b503e46d85d4925, type: 3}
-      propertyPath: ghostCornerPath.Array.size
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 265171441, guid: f62beafece1724bb4b503e46d85d4925, type: 3}
       propertyPath: ghostCorner
@@ -4562,10 +4558,6 @@ PrefabInstance:
       propertyPath: ghostCornerPath.Array.data[2]
       value: 
       objectReference: {fileID: 1119038716}
-    - target: {fileID: 265171442, guid: f62beafece1724bb4b503e46d85d4925, type: 3}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f62beafece1724bb4b503e46d85d4925, type: 3}
 --- !u!1 &265171440 stripped
@@ -22123,9 +22115,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1272533500}
-  - {fileID: 3272411224121165708}
   - {fileID: 495484231}
   - {fileID: 1060837715}
+  - {fileID: 3272411224121165708}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26447,25 +26439,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1748801765, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
-      propertyPath: ghostCornerPath.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748801765, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
       propertyPath: ghostCorner
       value: 
       objectReference: {fileID: 551040488}
-    - target: {fileID: 1748801765, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
-      propertyPath: ghostColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748801765, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
-      propertyPath: ghostColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1748801765, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
-      propertyPath: ghostColor.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1748801765, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
       propertyPath: ghostCornerPath.Array.data[0]
       value: 
@@ -26478,10 +26454,6 @@ PrefabInstance:
       propertyPath: ghostCornerPath.Array.data[2]
       value: 
       objectReference: {fileID: 1600811064}
-    - target: {fileID: 1748801766, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3dc7b8e87eb74ccabebf5cff07dfaa2, type: 3}
 --- !u!1 &1748801764 stripped
@@ -27273,7 +27245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801779662, guid: ede650166f0594498ba00f7576556c44, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1801779662, guid: ede650166f0594498ba00f7576556c44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27286,10 +27258,6 @@ PrefabInstance:
     - target: {fileID: 1801779662, guid: ede650166f0594498ba00f7576556c44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801779659, guid: ede650166f0594498ba00f7576556c44, type: 3}
-      propertyPath: ghostCornerPath.Array.size
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1801779659, guid: ede650166f0594498ba00f7576556c44, type: 3}
       propertyPath: ghostCorner
@@ -27307,10 +27275,6 @@ PrefabInstance:
       propertyPath: ghostCornerPath.Array.data[2]
       value: 
       objectReference: {fileID: 839818194}
-    - target: {fileID: 1801779660, guid: ede650166f0594498ba00f7576556c44, type: 3}
-      propertyPath: m_Radius
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ede650166f0594498ba00f7576556c44, type: 3}
 --- !u!1 &1801779658 stripped
@@ -33208,7 +33172,7 @@ PrefabInstance:
     - target: {fileID: 7839925246311700018, guid: 00f84119c7b7147abaada2063d9153b9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7839925246311700018, guid: 00f84119c7b7147abaada2063d9153b9,
         type: 3}
@@ -33237,11 +33201,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2961028900936653029, guid: 00f84119c7b7147abaada2063d9153b9,
         type: 3}
-      propertyPath: ghostCornerPath.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2961028900936653029, guid: 00f84119c7b7147abaada2063d9153b9,
-        type: 3}
       propertyPath: ghostCorner
       value: 
       objectReference: {fileID: 53713857}
@@ -33264,11 +33223,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7452011053693570477, guid: 00f84119c7b7147abaada2063d9153b9,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7356985053275114992, guid: 00f84119c7b7147abaada2063d9153b9,
         type: 3}

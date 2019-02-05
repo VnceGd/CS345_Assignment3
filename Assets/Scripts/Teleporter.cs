@@ -16,13 +16,13 @@ public class Teleporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(characterOverlapping)
+        if (characterOverlapping)
         {
             Vector3 portalToCharacter = character.position - transform.position;
             float dotProduct = Vector3.Dot(transform.up, portalToCharacter);
-            
 
-            if((dotProduct > 0.0f && direction == 0) || (dotProduct < 0.0f && direction == 1))
+
+            if ((dotProduct > 0.0f && direction == 0) || (dotProduct < 0.0f && direction == 1))
             {
                 float rotationDiff = -Quaternion.Angle(transform.rotation, destination.rotation);
                 rotationDiff += 180;
@@ -40,7 +40,7 @@ public class Teleporter : MonoBehaviour
     // Character is inside portal
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" || other.tag == "Ghost")
+        if (other.tag == "Player" || other.tag == "Ghost")
         {
             characterOverlapping = true;
             character = other.transform;

@@ -4920,8 +4920,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1748801764}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.2
-  m_Speed: 1.2
+  m_Radius: 0.1
+  m_Speed: 1.5
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 480
@@ -4947,8 +4947,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
   myAgent: {fileID: 0}
-  ghostCornerPath: []
+  ghostCornerPath:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ghostColor: {r: 1, g: 0, b: 0, a: 1}
+  ghost: 0
   waiting: 1
   frightened: 0
   killed: 0

@@ -7,19 +7,20 @@ public class GhostBehavior : MonoBehaviour
     private float startSpeed;
 
     public NavMeshAgent myAgent;
-    private Transform player;
+    protected Transform player;
 
     public Transform[] ghostCornerPath;
     private int cornerIndex;
     public Color ghostColor;
     public ParticleSystem.MainModule ghostParticles;
+    public int ghost; // 0 = Blinky, 1 = Pinky, 2 = Clyde, 3 = Inky
 
     public bool waiting = true;
-    public bool frightened = false;
-    public bool killed = false;
+    public bool frightened;
+    public bool killed;
 
-    private float timer = 0.0f;
-    private float frightenedTimer = 0.0f;
+    private float timer;
+    private float frightenedTimer;
 
     private GameManager gameManager;
 
@@ -56,7 +57,7 @@ public class GhostBehavior : MonoBehaviour
             if (frightened)
             {
                 frightenedTimer += Time.deltaTime;
-                if(frightenedTimer > 5.0f)
+                if (frightenedTimer > 5.0f)
                 {
                     frightened = false;
                     frightenedTimer = 0.0f;
@@ -121,9 +122,32 @@ public class GhostBehavior : MonoBehaviour
     }
 
     // Ghost targets player
-    public void ChaseMode()
+    public virtual void ChaseMode()
     {
-        myAgent.destination = player.position;
+        switch (ghost)
+        {
+            case 0:
+                myAgent.destination = player.transform.position;
+                break;
+            case 1:
+                float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+                if (distanceToPlayer < 4.0f)
+                {
+                    ScatterMode();
+                }
+                else
+                {
+                    myAgent.destination = player.transform.position;
+                }
+
+                break;
+            case 2:
+                myAgent.destination = player.transform.position + (player.transform.forward * 2.0f);
+                break;
+            case 3:
+                myAgent.destination = player.transform.position + (player.transform.forward * 0.5f);
+                break;
+        }
     }
 
     // Ghost body fades and ghost moves to starting position
@@ -132,23 +156,25 @@ public class GhostBehavior : MonoBehaviour
         killed = true;
         myAgent.destination = startPosition;
         ghostParticles.startSize = 0.0f;
-        frightened = false;
         myAgent.speed = 2.0f;
     }
 
     // Ghost kills player if not frightened, gets killed if frightened
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            if(frightened)
+            if (frightened)
             {
                 Kill();
                 gameManager.IncreaseScore(200);
             }
-            else if(!killed)
+            else
             {
-                gameManager.LoseLife();
+                if (gameManager != null)
+                {
+                    gameManager.LoseLife();
+                }
             }
         }
     }

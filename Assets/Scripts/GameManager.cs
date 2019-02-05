@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     // 2 = Clyde
     // 3 = Inky
 
-    private float timer = 0.0f;
+    private float timer;
     public int pelletCount = 240;
     public int lives = 3;
-    public int score = 0;
+    public int score;
     public GameObject gameOverScreen;
     public TextMeshProUGUI gameOverScore;
     public GameObject victoryScreen;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         playerStartPosition = player.transform.position;
         playerMovement = player.GetComponent<PlayerMovement>();
 
-        for(int g = 0; g < ghosts.Length; g++)
+        for (int g = 0; g < ghosts.Length; g++)
         {
             ghostBehaviors[g] = ghosts[g].GetComponent<GhostBehavior>();
         }
@@ -44,13 +44,13 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
-        if(pelletCount < 170 || timer > 10.0f)
+        if (pelletCount < 170 || timer > 10.0f)
         {
             ghostBehaviors[2].waiting = false;
             if (pelletCount < 100 || timer > 20.0f)
             {
                 ghostBehaviors[3].waiting = false;
-                if(pelletCount <= 0)
+                if (pelletCount <= 0)
                 {
                     Victory();
                 }
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     // Cause ghosts to scatter
     public void Scatter()
     {
-        foreach(GhostBehavior ghost in ghostBehaviors)
+        foreach (GhostBehavior ghost in ghostBehaviors)
         {
             ghost.ScatterMode();
         }
@@ -77,9 +77,9 @@ public class GameManager : MonoBehaviour
     // Change ghost appearance and cause them to scatter
     public void Frighten()
     {
-        foreach(GhostBehavior ghost in ghostBehaviors)
+        foreach (GhostBehavior ghost in ghostBehaviors)
         {
-            if(!ghost.waiting)
+            if (!ghost.waiting)
             {
                 ghost.frightened = true;
                 ghost.myAgent.speed = 0.5f;
@@ -89,24 +89,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Set characters back to starting positions
-    public void ResetCharacters()
-    {
-        for(int g = 0; g < ghosts.Length; g++)
-        {
-            ghosts[g].SetActive(false);
-            ghosts[g].transform.position = ghostBehaviors[g].startPosition;
-            ghosts[g].SetActive(true);
-        }
-        player.transform.position = playerStartPosition;
-    }
-
     // Subtract a life, update HUD, reset characters
     public void LoseLife()
     {
         lives--;
         HUDLives.text = "Lives:\n" + lives.ToString();
-        if(lives <= 0)
+        if (lives <= 0)
         {
             GameOver();
         }
@@ -116,12 +104,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Set characters back to starting positions
+    public void ResetCharacters()
+    {
+        for (int g = 0; g < ghosts.Length; g++)
+        {
+            ghosts[g].SetActive(false);
+            ghosts[g].transform.position = ghostBehaviors[g].startPosition;
+            ghosts[g].SetActive(true);
+        }
+        player.transform.position = playerStartPosition;
+    }
+
     // Show Game Over screen
     public void GameOver()
     {
         gameOverScreen.SetActive(true);
         gameOverScore.text = "Score: " + score.ToString();
-        if(playerMovement.topDown == false)
+        if (playerMovement.topDown == false)
         {
             playerMovement.TogglePerspective();
         }

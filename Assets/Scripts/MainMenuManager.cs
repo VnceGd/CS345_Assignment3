@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     // Load the game scene
-    void PlayGame()
+    public void PlayGame()
     {
         SceneManager.LoadScene(1);
     }
 
     // Quit the game
-    void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
